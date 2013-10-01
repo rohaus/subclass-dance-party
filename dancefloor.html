@@ -6,12 +6,17 @@
     <script src="lib/jquery.js"></script>
     <script src="src/dancer.js"></script>
     <script src="src/blinkyDancer.js"></script>
+    <script src="src/polkaDancer.js"></script>
+    <script src="src/squareDancer.js"></script>
   </head>
   <body>
 
     <div class="topbar">
       <span class="title">object dance party</span>
-      <a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeBlinkyDancer">add a dancer</a>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeBlinkyDancer">Add A Blinky Dancer</a>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="MakeSquareDancer">Add A Square Dancer</a>
+      <a href="#" class="addDancerButton" data-dancer-maker-function-name="MakePolkaDancer">Add A Polka Dancer</a>
+      <a href="#" class="lineUpButton">Line Up All Dancers</a>
     </div>
 
     <script>
@@ -44,6 +49,10 @@
           );
 
           $('body').append(dancer.$node);
+        });
+
+        $(".lineUpButton").on("click", function(event){
+          $(".dancer").animate({top:10,left:10});
         });
       });
     </script>

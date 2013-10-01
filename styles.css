@@ -25,3 +25,14 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+.squareDancer{
+  border-radius:10px;
+}
+.polkaDancer{
+  border:25px;
+  border-radius:0px;
+}
+.blinkyDancer{
+  border:20px solid red;
+  border-radius:0px;
+}
