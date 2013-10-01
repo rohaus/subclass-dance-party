@@ -45,14 +45,19 @@
           var dancer = new dancerMakerFunction(
             $("body").height() * Math.random(),
             $("body").width() * Math.random(),
-            Math.random() * 1000
+            Math.random() * 2000
           );
-
+          window.dancers.push(dancer);
           $('body').append(dancer.$node);
         });
 
         $(".lineUpButton").on("click", function(event){
-          $(".dancer").animate({top:10,left:10});
+
+          for (var i = 0; i < window.dancers.length; i++) {
+            window.clearTimeout();
+            window.dancers[i].lineup(i);
+          };
+          // $(".dancer").animate({top:10,left:10});
         });
       });
     </script>

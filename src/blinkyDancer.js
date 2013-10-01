@@ -15,17 +15,7 @@ MakeBlinkyDancer.prototype.step = function(){
     result.push(rand);
   }
   var color = result.join("");
-  var triangle = "solid transparent "+Math.floor(Math.random()*50) + "px";
-  var bottomTriangle = "solid "+color+" "+Math.floor(Math.random()*50) + "px";
-  this.$node.css({
-    "width": 0, 
-    "height": 0, 
-    "border-bottom": triangle,  /* left arrow slant */
-    "border-top": bottomTriangle, /* right arrow slant */
-    "border-right": bottomTriangle, /* bottom, add background color here */
-    "font-size": 0,
-    "line-height": 0
-  });
+  this.$node.animate({top:this.top,left:"+=50"});
   this.$node.toggle();
 }
 

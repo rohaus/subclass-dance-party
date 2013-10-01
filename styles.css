@@ -26,13 +26,21 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }
 .squareDancer{
-  border-radius:10px;
+  border:30px solid;
 }
 .polkaDancer{
-  border:25px;
-  border-radius:0px;
+  border:15px solid white;
+  border-radius:15px;
 }
 .blinkyDancer{
-  border:20px solid red;
-  border-radius:0px;
+  width: 0px;
+  height: 0px;
+  border-right: 30px solid transparent;
+  border-top: 30px solid yellow;
+  border-left: 30px solid yellow;
+  border-bottom: 30px solid yellow;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
