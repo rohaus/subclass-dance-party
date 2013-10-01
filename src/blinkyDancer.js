@@ -19,3 +19,7 @@ MakeBlinkyDancer.prototype.step = function(){
   this.$node.toggle();
 }
 
+// MakeBlinkyDancer.prototype.lineup = function(spacer){
+//   this.$node.animate({top:10*spacer, left:10*spacer});
+// };
+

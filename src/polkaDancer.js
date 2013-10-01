@@ -13,3 +13,7 @@ MakePolkaDancer.prototype.step = function(){
     left:Math.random()*1000
   },3000);
 }
+
+// MakePolkaDancer.prototype.lineup = function(spacer){
+//   this.$node.animate({top:10*spacer, left:10*spacer});
+// };

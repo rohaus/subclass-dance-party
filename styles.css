@@ -44,3 +44,20 @@ body, a:link, a:visited, a:active{
   border-bottom-left-radius: 30px;
   border-bottom-right-radius: 30px;
 }
+.blinkyLineUp{
+  border-right: 300px solid transparent;
+  border-top: 300px solid yellow;
+  border-left: 300px solid yellow;
+  border-bottom: 300px solid yellow;
+  border-top-left-radius: 300px;
+  border-top-right-radius: 300px;
+  border-bottom-left-radius: 300px;
+  border-bottom-right-radius: 300px;
+  display:inline;
+}
+.polkaLineUp{
+  top:8px;
+}
+.squareLineUp{
+  top:15px;
+}
