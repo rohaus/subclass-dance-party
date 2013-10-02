@@ -24,24 +24,8 @@
         window.dancers = [];
 
         $(".addDancerButton").on("click", function(event){
-          /* This function sets up the click handlers for the create-dancer
-           * buttons on index.html. You should not need to alter it.
-           * As long as the "data-dancer-maker-function-name" attribute of a
-           * class="addDancerButton" DOM node matches one of the names of the
-           * maker functions available in the global scope, clicking that node
-           * will call the function to make the dancer. */
-
-          /* dancerMakerFunctionName is a string which must match
-           * one of the dancer maker functions available in global scope.
-           * A new object of the given type will be created and added
-           * to the stage.
-           */
           var dancerMakerFunctionName = $(this).data("dancer-maker-function-name");
-
-          // get the maker function for the kind of dancer we're supposed to make
           var dancerMakerFunction = window[dancerMakerFunctionName];
-
-          // make a dancer with a random position
           var dancer = new dancerMakerFunction(
             $("body").height() * Math.random(),
             $("body").width() * Math.random(),
@@ -61,22 +45,20 @@
               node.$node.css({left:30,top:blinkyPosition,display:"inline"});
               blinkyPosition+=65;
             }else if(node.$node.hasClass("squareDancer")){
-              node.$node.css({left:squarePosition,top:800});
+              node.$node.css({left:squarePosition,top:800,"-webkit-transform":"rotate(30deg)"});
               squarePosition+=80;
             }else if(node.$node.hasClass("polkaDancer")){
               node.$node.css({left:75,top:polkaPosition});
               polkaPosition+=65;
             }
           })
-          // $('.blinkyDancer').addClass('lineUp').clearQueue().stop().each($(".blinkyDancer"),function(){});
-          // $('.squareDancer').addClass('lineUp').clearQueue().stop().css({top:15});
-          // $('.polkaDancer').addClass('lineUp').clearQueue().stop().css({left:30});
-          // for (var i = 0; i < window.dancers.length; i++) {
-          //   window.dancers[i].$node.clearQueue().stop();
-          //   // toggleClass('blinkyLineUp').toggleClass('lineUp');
-          // };
         });
-
+        $(document).on('mousemove', function(e){
+          $('.blinkyDancer').css({
+            left: e.pageX,
+            top: e.pageY
+          });
+        });
       });
     </script>
 
