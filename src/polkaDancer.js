@@ -7,13 +7,13 @@ MakePolkaDancer.prototype = Object.create(MakeDancer.prototype);
 MakePolkaDancer.prototype.constructor = MakePolkaDancer;
 
 MakePolkaDancer.prototype.step = function(){
-  MakeDancer.prototype.step.call(this);
-  this.$node.animate({
-    top:Math.random()*1000,
-    left:Math.random()*1000
-  },3000);
-}
-
-// MakePolkaDancer.prototype.lineup = function(spacer){
-//   this.$node.animate({top:10*spacer, left:10*spacer});
-// };
+  if(this.$node.hasClass("lineUp")){
+    return;
+  }else{
+    this.$node.animate({
+      top:Math.random()*1000,
+      left:Math.random()*1000
+    },3000);
+    MakeDancer.prototype.step.call(this);
+  }
+};
